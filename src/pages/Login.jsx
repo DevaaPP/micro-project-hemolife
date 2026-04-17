@@ -39,7 +39,6 @@ export default function Login() {
     e.preventDefault();
     if (!form.email || !form.password) { setError("Please fill in both fields."); return; }
     setLoading(true);
-<<<<<<< HEAD
 
     try {
       await login({ email: form.email, password: form.password });
@@ -49,13 +48,6 @@ export default function Login() {
       setLoading(false);
       setError(err.message || "Invalid credentials provided.");
     }
-=======
-    await new Promise((r) => setTimeout(r, 600));
-    const result = login(form.email, form.password);
-    setLoading(false);
-    if (result.success) navigate(from, { replace:true });
-    else setError(result.error);
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
   };
 
   return (
@@ -138,19 +130,6 @@ export default function Login() {
             </div>
           )}
 
-<<<<<<< HEAD
-=======
-          {/* Demo hint */}
-          <div style={{ marginBottom:20, padding:"12px 14px", borderRadius:12, background:"#eff6ff", border:"1px solid #bfdbfe", display:"flex", gap:10, alignItems:"flex-start" }}>
-            <span style={{ fontSize:16 }}>💡</span>
-            <div>
-              <p style={{ fontSize:12, fontWeight:700, color:"#1d4ed8", marginBottom:2 }}>Demo credentials</p>
-              <p style={{ fontSize:12, color:"#3b82f6" }}>Email: <strong>admin@hemolife.com</strong></p>
-              <p style={{ fontSize:12, color:"#3b82f6" }}>Password: <strong>admin123</strong></p>
-            </div>
-          </div>
-
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
           {/* Error */}
           {error && (
             <div style={{ marginBottom:16, padding:"12px 14px", borderRadius:12, background:"#fee2e2", border:"1px solid #fca5a5", color:"#991b1b", fontSize:13, fontWeight:500, display:"flex", gap:8 }}>

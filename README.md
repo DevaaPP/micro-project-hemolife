@@ -1,16 +1,11 @@
 # 🩸 HemoLife — Blood Donation Platform
 
-<<<<<<< HEAD
 A full-stack blood donation management platform built with **React**, **Express**, **PostgreSQL**, and **Tailwind CSS**.
-=======
-A modern, production-ready blood donation platform built with **React + Vite + Tailwind CSS**.
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
 
 ---
 
 ## ✨ Features
 
-<<<<<<< HEAD
 - **User Authentication** — Register, login, JWT-based session management with role support (user / donor)
 - **Dashboard** — Metrics cards, recent activity feed, blood-type inventory, quick actions
 - **Donor Directory** — Searchable and filterable donor list with status badges and avatars
@@ -62,21 +57,11 @@ A modern, production-ready blood donation platform built with **React + Vite + T
 ├── package.json            # Frontend dependencies & scripts
 └── .gitignore
 ```
-=======
-| Page | Highlights |
-|------|-----------|
-| **Home** | Full-width gradient hero, feature cards, campaign grid, CTA band, footer |
-| **Dashboard** | Metrics cards, recent activity feed, blood-type inventory, quick actions |
-| **Donors** | Searchable/filterable table, status pills, avatars |
-| **Add Donor** | Multi-section form, real-time eligibility checker (permanent + temporary), dynamic status card |
-| **Profile** | Donation history, impact stats, personal details |
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
 
 ---
 
 ## 🚀 Quick Start
 
-<<<<<<< HEAD
 ### Prerequisites
 
 - **Node.js** (v18+)
@@ -168,19 +153,6 @@ npm run dev
 
 This project is for educational purposes.
 
-=======
-```bash
-# 1. Install dependencies
-npm install
-
-# 2. Start dev server (opens at http://localhost:5173)
-npm run dev
-
-# 3. Production build
-npm run build
-```
-
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
 ---
 
 ## 📁 Folder Structure

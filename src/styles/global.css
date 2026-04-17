@@ -78,12 +78,9 @@ input::placeholder, textarea::placeholder { color: #d1d5db !important; }
 @media (min-width:769px) {
   .hide-desktop { display:none !important; }
 }
-<<<<<<< HEAD
 
 /* ── Print styles (for certificates) ── */
 @media print {
   nav, .print\\:hidden { display:none !important; }
   body { background:#fff !important; }
 }
-=======
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87

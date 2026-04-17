@@ -1,9 +1,5 @@
 export default function Button({ children, variant = "primary", size = "md", disabled, onClick, className = "", ...props }) {
-<<<<<<< HEAD
   const base = "inline-flex items-center justify-center gap-2 font-semibold rounded-2xl transition-all duration-200 cursor-pointer border-none font-[inherit] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none";
-=======
-  const base = "inline-flex items-center justify-content-center gap-2 font-semibold rounded-2xl transition-all duration-200 cursor-pointer border-none font-[inherit] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none";
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
 
   const variants = {
     primary: "text-white hover:-translate-y-0.5 active:scale-95",

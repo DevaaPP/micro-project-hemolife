@@ -10,17 +10,12 @@ import Dashboard from "./pages/Dashboard";
 import Donors    from "./pages/Donors";
 import AddDonor  from "./pages/AddDonor";
 import Profile   from "./pages/Profile";
-<<<<<<< HEAD
 import DonorProfile from "./pages/DonorProfile";
 import WhyDonate from "./pages/WhyDonate";
 import BadgesPage from "./pages/BadgesPage";
 import FindDonors from "./pages/FindDonors";
 import Donations from "./pages/Donations";
 import Certificate from "./pages/Certificate";
-=======
-import WhyDonate from "./pages/WhyDonate";
-import BadgesPage from "./pages/BadgesPage";
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
 
 import "./styles/global.css";
 
@@ -36,10 +31,7 @@ function AppRoutes() {
         <Route path="/"      element={<Home />} />
         <Route path="/why-donate" element={<WhyDonate />} />
         <Route path="/donors" element={<Donors />} />   {/* read-only public view */}
-<<<<<<< HEAD
         <Route path="/donors/search" element={<FindDonors />} />
-=======
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
 
         {/* ════ AUTH PAGES — redirect to dashboard if already logged in ════ */}
         <Route path="/login"    element={user ? <Navigate to="/dashboard" replace /> : <Login />} />
@@ -50,12 +42,9 @@ function AppRoutes() {
         <Route path="/donors/add" element={<ProtectedRoute><AddDonor /></ProtectedRoute>} />
         <Route path="/badges" element={<ProtectedRoute><BadgesPage /></ProtectedRoute>} />
         <Route path="/profile"    element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-<<<<<<< HEAD
         <Route path="/donors/:id" element={<ProtectedRoute><DonorProfile /></ProtectedRoute>} />
         <Route path="/donations" element={<ProtectedRoute><Donations /></ProtectedRoute>} />
         <Route path="/donations/:id/certificate" element={<ProtectedRoute><Certificate /></ProtectedRoute>} />
-=======
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
 
         {/* ════ 404 ════ */}
         <Route path="*" element={

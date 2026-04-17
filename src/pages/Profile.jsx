@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { updateProfile, updateDonorAvailability } from "../services/api";
-=======
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
 
 const HISTORY = [
   { icon:"🩸", title:"Whole Blood Donation", meta:"Red Cross Silchar · April 1, 2026",    badge:"O-" },
@@ -17,21 +12,14 @@ const HISTORY = [
 ];
 
 export default function Profile() {
-<<<<<<< HEAD
   const { user, logout, updateUserSession } = useAuth();
   const navigate = useNavigate();
-=======
-  const navigate = useNavigate();
-  const { user, logout } = useAuth();
-
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
   const initials = user?.name
     ? user.name.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase()
     : "?";
 
   const handleLogout = () => { logout(); navigate("/login"); };
 
-<<<<<<< HEAD
   const [isEditing, setIsEditing] = useState(false);
   const [loadingUpdate, setLoadingUpdate] = useState(false);
   const [form, setForm] = useState({
@@ -105,8 +93,6 @@ export default function Profile() {
     setUpdatingAvailability(false);
   };
 
-=======
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
   return (
     <div className="min-h-screen pt-[100px] pb-16 px-[5%]" style={{ background: "#f9fafb", fontFamily: "Poppins, sans-serif" }}>
 
@@ -117,7 +103,6 @@ export default function Profile() {
           style={{ border: "56px solid rgba(255,255,255,.07)" }} />
 
         <div className="flex items-end gap-6 mb-6 relative z-10 flex-wrap">
-<<<<<<< HEAD
           <div className="w-24 h-24 rounded-full flex items-center justify-center text-[1.8rem] font-extrabold flex-shrink-0 bg-cover bg-center"
             style={{ 
               backgroundImage: user?.avatar ? `url(${user.avatar})` : "linear-gradient(135deg,#ff8a95,white)", 
@@ -127,25 +112,15 @@ export default function Profile() {
             {!user?.avatar && initials}
           </div>
           <div className="flex-1">
-=======
-          <div className="w-24 h-24 rounded-full flex items-center justify-center text-[1.8rem] font-extrabold flex-shrink-0"
-            style={{ background: "linear-gradient(135deg,#ff8a95,white)", border: "4px solid rgba(255,255,255,.3)", color: "#be123c" }}>
-            {initials}
-          </div>
-          <div>
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
             <h1 className="text-[1.8rem] font-extrabold text-white">{user?.name || "Donor"}</h1>
             <p className="text-white/70 text-sm mt-1">
               🩸 {user?.role === "admin" ? "Administrator" : "Active Donor"} · Since {user?.joinedDate || "2024"}
             </p>
           </div>
-<<<<<<< HEAD
           <button onClick={openEditModal} 
             className="px-5 py-2.5 bg-white/20 hover:bg-white/30 text-white rounded-xl text-sm font-bold backdrop-blur-md transition-all border border-white/30 cursor-pointer">
             Edit Profile
           </button>
-=======
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
         </div>
 
         <div className="flex gap-2.5 flex-wrap relative z-10">
@@ -241,7 +216,6 @@ export default function Profile() {
           </div>
         </div>
       </div>
-<<<<<<< HEAD
 
       {/* Edit Profile Modal */}
       {isEditing && (
@@ -314,8 +288,6 @@ export default function Profile() {
           </div>
         </div>
       )}
-=======
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
     </div>
   );
 }

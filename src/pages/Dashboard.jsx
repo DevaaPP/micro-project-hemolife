@@ -1,17 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-<<<<<<< HEAD
 import { getDonors, getStats, getRequests } from "../services/api";
-=======
-import { getDonors } from "../services/donorService";
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
 
 export default function Dashboard() {
   const navigate      = useNavigate();
   const { user }      = useAuth();
   const [donors, setDonors] = useState([]);
-<<<<<<< HEAD
   const [bloodCount, setBloodCount] = useState({});
   const [requests, setRequests] = useState([]);
   const [revealedIds, setRevealedIds] = useState([]);
@@ -40,10 +35,6 @@ export default function Dashboard() {
     };
     fetchData();
   }, []);
-=======
-
-  useEffect(() => { setDonors(getDonors()); }, []);
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
 
   /* ── Live metrics from donor data ── */
   const total     = donors.length;
@@ -52,12 +43,6 @@ export default function Dashboard() {
   const permanent = donors.filter((d) => d.status === "permanent").length;
 
   /* Blood type counts */
-<<<<<<< HEAD
-=======
-  const bloodCount = donors.reduce((acc, d) => {
-    acc[d.blood] = (acc[d.blood] || 0) + 1; return acc;
-  }, {});
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
   const BLOOD_TYPES = ["A+","A-","B+","B-","O+","O-","AB+","AB-"];
 
   /* Low stock threshold */
@@ -115,7 +100,6 @@ export default function Dashboard() {
       {/* ── Main grid ── */}
       <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6">
 
-<<<<<<< HEAD
         <div className="flex flex-col gap-6">
 
           {/* Current Blood Requests (Emergency Board) */}
@@ -159,8 +143,6 @@ export default function Dashboard() {
             </div>
           )}
 
-=======
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
         {/* Recent donors */}
         <div className="bg-white rounded-[22px] p-7 border border-gray-100" style={{ boxShadow:"0 1px 4px rgba(0,0,0,.05)" }}>
           <div className="flex items-center justify-between mb-5">
@@ -174,7 +156,6 @@ export default function Dashboard() {
             <div className="py-10 text-center text-gray-400 text-sm">No donors registered yet.</div>
           )}
           {recent.map((d) => {
-<<<<<<< HEAD
           const st = { eligible:"bg-red-50 text-red-600", temporary:"bg-amber-50 text-amber-800", permanent:"bg-gray-100 text-gray-500" };
           return (
             <div key={d.id} className="flex items-center gap-3.5 py-3 border-b border-gray-50 last:border-none last:pb-0">
@@ -194,24 +175,6 @@ export default function Dashboard() {
         })}
         </div>
       </div>
-=======
-            const st = { eligible:"bg-red-50 text-red-600", temporary:"bg-amber-50 text-amber-800", permanent:"bg-gray-100 text-gray-500" };
-            return (
-              <div key={d.id} className="flex items-center gap-3.5 py-3 border-b border-gray-50 last:border-none last:pb-0">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
-                  style={{ background: d.bg }}>{d.initials}</div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-gray-800 truncate">{d.name}</p>
-                  <p className="text-xs text-gray-400 mt-0.5">{d.blood} · {d.location} · {d.lastDonated}</p>
-                </div>
-                <span className={`text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0 ${st[d.status]}`}>
-                  {d.status === "eligible" ? "Eligible" : d.status === "temporary" ? "Temp" : "Ineligible"}
-                </span>
-              </div>
-            );
-          })}
-        </div>
->>>>>>> 89fdc1aff146c1b3547e27112ba32b0457979d87
 
         {/* Right column */}
         <div className="flex flex-col gap-6">
